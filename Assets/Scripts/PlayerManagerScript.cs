@@ -29,7 +29,6 @@ public class PlayerManagerScript : MonoBehaviour
     }
 
     /// <summary>
-    /// move the party to the front,back, and sides at a certain speed
     /// </summary>
     /// <param name="speed"></param>
     public void Movement(float speed)
@@ -51,7 +50,7 @@ public class PlayerManagerScript : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Platform") )
+        if (collision.gameObject.CompareTag("Ground") )
         {
             isOnGround = true;
         }
