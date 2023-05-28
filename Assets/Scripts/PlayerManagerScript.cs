@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerManagerScript : MonoBehaviour
 {
-
+    [SerializeField] AudioClip soundPlayer;
+    [SerializeField] AudioSource JumpSound;
     [SerializeField] float speed;
     [SerializeField] bool isOnGround = true;
     [SerializeField] float jumpForce = 8f;
