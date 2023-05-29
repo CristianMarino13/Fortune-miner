@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerManagerScript : MonoBehaviour
 {
-    [SerializeField] AudioClip soundPlayer;
-    [SerializeField] AudioSource JumpSound;
+
+
     [SerializeField] float speed;
     [SerializeField] bool isOnGround = true;
+    
     [SerializeField] float jumpForce = 8f;
     public float gravityModifier;
 
     private Rigidbody playerRb;
+    public bool gameEnd = false;
+    public bool gemAchieve = false;
 
 
     void Awake()
@@ -51,9 +54,17 @@ public class PlayerManagerScript : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") )
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("StartPoint") )
         {
             isOnGround = true;
+        } 
+        else if(collision.gameObject.CompareTag("LavaFloor"))
+        {
+            gameEnd = true;
+        }
+        else if (collision.gameObject.CompareTag("GemObject"))
+        {
+            gemAchieve = true;
         }
     }
 
