@@ -14,12 +14,18 @@ public class GameOverScript : MonoBehaviour
     {
         if (endVariable.gameEnd == true)
         {
-            SceneManager.LoadScene("FinalScene");
+            SceneManager.LoadSceneAsync("FinalScene");
             LoadSceneOptions();
         }
     }
     void LoadSceneOptions()
     {
-        
+        if (endVariable.gemAchieve == true && endVariable.gameEnd == false)
+        {
+            Debug.Log("Game Passed");
+        } else 
+        {
+            Debug.Log("Game OVer");
+        }
     }
 }

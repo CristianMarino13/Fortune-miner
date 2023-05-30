@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayButtomScript : MonoBehaviour
 {
-    
+    public string sceneName;
     void Start()
     {
         Invoke ( "LoadScene",3.0f);
     }
     void LoadScene()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(sceneName);
     }
 }

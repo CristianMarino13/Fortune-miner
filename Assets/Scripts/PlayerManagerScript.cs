@@ -11,7 +11,6 @@ public class PlayerManagerScript : MonoBehaviour
     
     [SerializeField] float jumpForce = 8f;
     public float gravityModifier;
-
     private GameObject player;
     private Rigidbody playerRb;
     public bool gameEnd = false;
@@ -63,7 +62,7 @@ public class PlayerManagerScript : MonoBehaviour
         else if(collision.gameObject.CompareTag("LavaFloor"))
         {
             gameEnd = true;
-            Destroy(player);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("GemObject"))
         {

@@ -22,7 +22,7 @@ public class CubeGeneratorScript : MonoBehaviour
         for (int i = 0; i < numberOfCubes; i++)
         {
            
-            Vector3 randomPosition = new Vector3(Random.Range(distancex1,distancex2), Random.Range(-25f, distancey), Random.Range(0f, distancez));
+            Vector3 randomPosition = new Vector3(Random.Range(distancex1,distancex2), Random.Range(-25f, distancey), Random.Range(-30f, distancez));
             GameObject cubePrefab = cubePrefabs[Random.Range(0, cubePrefabs.Count)];
             GameObject cube = Instantiate(cubePrefab, randomPosition, Quaternion.identity);
         }
