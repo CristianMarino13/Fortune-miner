@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     private PlayerManagerScript endVariable;
-    void Start()
+    void Update()
     {
         LoadScene3();
     }

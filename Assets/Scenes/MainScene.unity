@@ -156,11 +156,11 @@ MonoBehaviour:
   - {fileID: 2479951958359801932, guid: bc0929968867d4341a9252bc522510d1, type: 3}
   - {fileID: 2510858755836731163, guid: d063c539bc7b03b42ac5b7fdb9737bfc, type: 3}
   - {fileID: 2011942061287395063, guid: e58a89430f663244ca63ad19184d5dea, type: 3}
-  numberOfCubes: 50
-  distancex1: -35
+  numberOfCubes: 100
+  distancex1: -33
   distancex2: -30
-  distancey: 5
-  distancez: 100
+  distancey: 25
+  distancez: 50
 --- !u!4 &9157279
 Transform:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233794598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 60, y: 0, z: 0}
+  m_LocalPosition: {x: 40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686152311}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -60, y: 0, z: 0}
+  m_LocalPosition: {x: -40, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -868,7 +868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909281504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: -3, z: 20}
+  m_LocalPosition: {x: 20, y: -3, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -890,7 +890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 909281505}
-  pointA: {fileID: 886559724}
   pointB: {fileID: 686152312}
   duration: 6
 --- !u!64 &909281507
@@ -1036,11 +1035,11 @@ MonoBehaviour:
   - {fileID: 2479951958359801932, guid: bc0929968867d4341a9252bc522510d1, type: 3}
   - {fileID: 2510858755836731163, guid: d063c539bc7b03b42ac5b7fdb9737bfc, type: 3}
   - {fileID: 2011942061287395063, guid: e58a89430f663244ca63ad19184d5dea, type: 3}
-  numberOfCubes: 50
+  numberOfCubes: 100
   distancex1: 30
-  distancex2: 60
-  distancey: 5
-  distancez: 20
+  distancex2: 33
+  distancey: 25
+  distancez: 50
 --- !u!1 &1098358699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136515684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30, y: -1, z: 10}
+  m_LocalPosition: {x: -20, y: -1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1124,7 +1123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 1136515685}
-  pointA: {fileID: 963965915}
   pointB: {fileID: 233794599}
   duration: 6
 --- !u!64 &1136515687
@@ -1260,7 +1258,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311329597}
-  m_LocalRotation: {x: 0.19424808, y: 0.000000016878642, z: -0.0000000033423064, w: 0.98095244}
+  m_LocalRotation: {x: 0.19424808, y: -0.000000016878642, z: 0.0000000033423064, w: 0.98095244}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1578,7 +1576,7 @@ MonoBehaviour:
   speed: 10
   isOnGround: 1
   jumpForce: 8
-  gravityModifier: 1
+  gravityModifier: 3
   gameEnd: 0
   gemAchieve: 0
 --- !u!54 &1675363439
@@ -1901,6 +1899,8 @@ GameObject:
   - component: {fileID: 1780163709}
   - component: {fileID: 1780163708}
   - component: {fileID: 1780163712}
+  - component: {fileID: 1780163713}
+  - component: {fileID: 1780163714}
   m_Layer: 0
   m_Name: LavaFloor
   m_TagString: LavaFloor
@@ -2000,6 +2000,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1780163713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780163707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f7417a9fe87e947951e4765a444910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScript: {fileID: 0}
+  baseObject: {fileID: 0}
+--- !u!114 &1780163714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780163707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc5f24c3243535428bd02717c82b81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1820937362
 GameObject:
   m_ObjectHideFlags: 3
@@ -2090,6 +2116,7 @@ GameObject:
   - component: {fileID: 1856601169}
   - component: {fileID: 1856601168}
   - component: {fileID: 1856601167}
+  - component: {fileID: 1856601171}
   m_Layer: 0
   m_Name: Gem
   m_TagString: GemObject
@@ -2169,13 +2196,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1856601166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13, y: -23, z: -58}
+  m_LocalPosition: {x: 0, y: -23, z: -58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2059632742}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856601171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856601166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f7417a9fe87e947951e4765a444910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseScript: {fileID: 0}
+  baseObject: {fileID: 0}
 --- !u!1 &1944810256
 GameObject:
   m_ObjectHideFlags: 0
