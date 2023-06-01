@@ -6,26 +6,22 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     private PlayerManagerScript endVariable;
-    public void Update()
+    
+    private GameObject lavafloor;
+    public void  Awake()
     {
-        LoadScene();
+        lavafloor = GetComponent<GameObject>();
     }
-    void LoadScene()
+    private void OnTriggerEnter(Collider other) 
     {
-        if (endVariable.gameEnd == true)
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("FinalScene");
-            LoadSceneOptions();
+            Destroy(other.gameObject);
+            Invoke("changeScene",2.0f);   
         }
     }
-    void LoadSceneOptions()
+    public void changeScene()
     {
-        if (endVariable.gemAchieve == true && endVariable.gameEnd == false)
-        {
-            Debug.Log("Game Passed");
-        } else 
-        {
-            Debug.Log("Game OVer");
-        }
+        SceneManager.LoadScene("FinalScene");
     }
 }

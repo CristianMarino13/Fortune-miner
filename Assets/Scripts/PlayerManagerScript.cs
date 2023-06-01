@@ -26,11 +26,9 @@ public class PlayerManagerScript : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
-        Movement();
-
-        
+        Movement();   
     }
     public void Movement()
     {

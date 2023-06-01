@@ -9,7 +9,7 @@ public class PlatformMovementScript : MonoBehaviour
     public Transform pointB;    
     public float duration; 
 
-    private void Start()
+    private void Awake()
     {
         
         MovePlatform();
