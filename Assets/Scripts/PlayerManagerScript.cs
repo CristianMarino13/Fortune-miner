@@ -28,15 +28,11 @@ public class PlayerManagerScript : MonoBehaviour
 
     void Update()
     {
-        Movement(speed);
+        Movement();
 
         
     }
-
-    /// <summary>
-    /// </summary>
-    /// <param name="speed"></param>
-    public void Movement(float speed)
+    public void Movement()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -62,12 +58,12 @@ public class PlayerManagerScript : MonoBehaviour
         else if(collision.gameObject.CompareTag("LavaFloor"))
         {
             gameEnd = true;
-            Destroy(gameObject);
+            
         }
         else if (collision.gameObject.CompareTag("GemObject"))
         {
             gemAchieve = true;
-            Destroy(gameObject);
+            
         }
     }
 

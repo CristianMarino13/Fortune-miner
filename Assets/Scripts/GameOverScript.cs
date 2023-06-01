@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     private PlayerManagerScript endVariable;
-    void Update()
+    public void Update()
     {
-        LoadScene3();
+        LoadScene();
     }
-    void LoadScene3()
+    void LoadScene()
     {
         if (endVariable.gameEnd == true)
         {
-            SceneManager.LoadSceneAsync("FinalScene");
+            SceneManager.LoadScene("FinalScene");
             LoadSceneOptions();
         }
     }
