@@ -11,7 +11,7 @@ public class PlayerManagerScript : MonoBehaviour
     
     [SerializeField] float jumpForce = 8f;
     public float gravityModifier;
-
+    private GameObject player;
     private Rigidbody playerRb;
     public bool gameEnd = false;
     public bool gemAchieve = false;
@@ -19,6 +19,7 @@ public class PlayerManagerScript : MonoBehaviour
 
     void Awake()
     {
+        player = GetComponent<GameObject>();
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
 
@@ -27,15 +28,11 @@ public class PlayerManagerScript : MonoBehaviour
 
     void Update()
     {
-        Movement(speed);
+        Movement();
 
         
     }
-
-    /// <summary>
-    /// </summary>
-    /// <param name="speed"></param>
-    public void Movement(float speed)
+    public void Movement()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -61,10 +58,12 @@ public class PlayerManagerScript : MonoBehaviour
         else if(collision.gameObject.CompareTag("LavaFloor"))
         {
             gameEnd = true;
+            
         }
         else if (collision.gameObject.CompareTag("GemObject"))
         {
             gemAchieve = true;
+            
         }
     }
 

@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     private PlayerManagerScript endVariable;
-    void Start()
+    public void Update()
     {
-        LoadScene3();
+        LoadScene();
     }
-    void LoadScene3()
+    void LoadScene()
     {
         if (endVariable.gameEnd == true)
         {
@@ -20,6 +20,12 @@ public class GameOverScript : MonoBehaviour
     }
     void LoadSceneOptions()
     {
-        
+        if (endVariable.gemAchieve == true && endVariable.gameEnd == false)
+        {
+            Debug.Log("Game Passed");
+        } else 
+        {
+            Debug.Log("Game OVer");
+        }
     }
 }

@@ -6,7 +6,6 @@ using DG.Tweening;
 public class PlatformMovementScript : MonoBehaviour
 {
     public Transform platform;  
-    public Transform pointA;    
     public Transform pointB;    
     public float duration; 
 
