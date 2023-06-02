@@ -14,7 +14,7 @@ public class PlayerManagerScript : MonoBehaviour
     private GameObject player;
     private Rigidbody playerRb;
     public bool gameEnd = false;
-    public bool gemAchieve = false;
+    public int gemAchieve;
 
 
     void Awake()
@@ -22,6 +22,7 @@ public class PlayerManagerScript : MonoBehaviour
         player = GetComponent<GameObject>();
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
+        
 
     }
 
@@ -42,16 +43,17 @@ public class PlayerManagerScript : MonoBehaviour
             playerRb.velocity = new Vector3(playerRb.velocity.x, jumpForce, playerRb.velocity.y);
             isOnGround = false;
 
-        }   
+        }
         
     }
 
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("StartPoint") )
+        if  (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("StartPoint") )
         {
             isOnGround = true;
+            
         } 
         else if(collision.gameObject.CompareTag("LavaFloor"))
         {
@@ -60,7 +62,7 @@ public class PlayerManagerScript : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("GemObject"))
         {
-            gemAchieve = true;
+            gemAchieve++;
             
         }
     }
