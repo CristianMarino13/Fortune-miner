@@ -1499,6 +1499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oneScene: MainScene
+  audioDefault: {fileID: 2137164962}
 --- !u!1 &572706651
 GameObject:
   m_ObjectHideFlags: 0
