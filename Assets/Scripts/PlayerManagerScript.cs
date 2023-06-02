@@ -60,10 +60,14 @@ public class PlayerManagerScript : MonoBehaviour
             gameEnd = true;
             
         }
-        else if (collision.gameObject.CompareTag("GemObject"))
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("GemObject"))
         {
             gemAchieve++;
-            
+            Destroy(other.gameObject);
+            Debug.Log("gems in total are"+ gemAchieve);
         }
     }
 
