@@ -23,4 +23,16 @@ public class PlatformMovementScript : MonoBehaviour
         
         tweener.SetLoops(-1, LoopType.Yoyo);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag ("Player"))
+        {
+            collision.gameObject.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        collision.gameObject.transform.SetParent(null);
+    }
 }

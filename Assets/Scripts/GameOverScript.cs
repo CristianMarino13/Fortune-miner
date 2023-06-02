@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameOverScript : MonoBehaviour
 {
     private PlayerManagerScript endVariable;
-    
+
     private GameObject lavafloor;
+    public bool endVerifier = true;
+    public int delay;
     public void  Awake()
     {
         lavafloor = GetComponent<GameObject>();
@@ -17,9 +19,11 @@ public class GameOverScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(other.gameObject);
-            Invoke("changeScene",2.0f);   
+            endVerifier = false;
+            Invoke("changeScene",delay);   
         }
     }
+    
     public void changeScene()
     {
         SceneManager.LoadScene("FinalScene");
